@@ -5,6 +5,8 @@ User Roles
 
 👨‍💼 Admin – Add/Delete Doctors & Patients
 
+👨‍⚕️ Doctor can view and manage all patients
+
 🧑‍🤝‍🧑 Patient – Login & view details
 
 Authentication & Security
