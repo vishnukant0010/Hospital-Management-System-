@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Patient List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/doctor/dashboard">Hospital Management System</a>
+        <div class="navbar-nav ms-auto">
+            <a class="nav-link" href="/doctor/dashboard">Dashboard</a>
+            <a class="nav-link active" href="/doctor/patients">Patients</a>
+            <a class="nav-link" href="/logout">Logout</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h2 class="mb-4">Patient List</h2>
+
+    <div class="card">
+        <div class="card-header">Patients Under Your Care</div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Phone</th>
+                        <th>Ailment</th>
+                        <th>City</th>
+                        <th>State</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="patient : ${patients}">
+                        <td th:text="${patient.id}"></td>
+                        <td th:text="${patient.name}"></td>
+                        <td th:text="${patient.age}"></td>
+                        <td th:text="${patient.phoneNumber}"></td>
+                        <td th:text="${patient.ailment}"></td>
+                        <td th:text="${patient.city}"></td>
+                        <td th:text="${patient.state}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

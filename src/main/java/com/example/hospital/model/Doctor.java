@@ -1,4 +1,4 @@
-package org.example.hospital.model;
+package com.example.hospital.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,8 +12,16 @@ public class Doctor {
     private Long id;
     private String name;
     private String specialization;
+    private String contact;
 
-    // Getters and Setters
+    public Doctor() {}
+
+    public Doctor(String name, String specialization, String contact) {
+        this.name = name;
+        this.specialization = specialization;
+        this.contact = contact;
+    }
+
     public Long getId() {
         return id;
     }
@@ -31,5 +39,11 @@ public class Doctor {
     }
     public void setSpecialization(String specialization) {
         this.specialization = specialization;
+    }
+    public String getContact() {
+        return contact;
+    }
+    public void setContact(String contact) {
+        this.contact = contact;
     }
 }
